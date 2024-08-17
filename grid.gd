@@ -17,11 +17,10 @@ func _ready() -> void:
 			instance.grid = self
 			instance.x_location = x
 			instance.y_location = y
-			add_child(instance)
 			instance.position = Vector2(x*tile_size,y*tile_size)
+			add_child(instance)
 			row.append(instance)
 		tile_array.append(row)
-	print(tile_array)
 	
 func _return_neighbours(tile : Tile):
 	var return_array : Array
