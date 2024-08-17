@@ -4,7 +4,7 @@ class_name UI
 const tiles_to_show : int = 4
 const button_size : int = 128
 
-var buttonScene = preload("res://streetbutton.tscn")
+var buttonScene = preload("res://map/streetbutton.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -8,7 +8,7 @@ var tile_array : Array
 var current_tile : String = ""
 var current_rotation : int = 0
 
-var tileScene = preload("res://tile.tscn")
+var tileScene = preload("res://map/tile.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
