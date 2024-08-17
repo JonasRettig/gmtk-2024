@@ -9,10 +9,6 @@
 
 [node name="Tile" type="Node2D" parent="Grid"]
 script = ExtResource("1_e35fc")
-rotation_degree = null
-x_location = null
-y_location = null
-is_filled = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Grid/Tile"]
 texture = ExtResource("2_u2q30")

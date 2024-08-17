@@ -30,14 +30,14 @@ func _init(tile_name : Tile_Enum, rotation_degree : int):
 			]
 			for i in connections:
 				connections[i] = true
-			rotate_tile(rotation_degree, connections)
+			_rotate_tile(rotation_degree, connections)
 		Tile_Enum.TEST2:
 			train_s_e = true
 			
 func _rotate_tile(rotation_degree : int, connections : Array):
 	for i in rotation_degree/90:
 		for x in connections:
-			rotate_connection(connections[i])
+			_rotate_connection(connections[i])
 			
 func _rotate_connection(connection):
 	match connection:
