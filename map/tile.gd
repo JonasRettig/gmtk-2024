@@ -47,6 +47,8 @@ func _fill_tile(tile_enum : String, rotation_degree : int) -> bool:
 				placedTile = instance
 				add_child(instance)
 				is_filled = true
+				for tile in get_affected_tiles():
+					grid.graph.add_edge(tile, placedTile, 1)
 				return true
 			else:
 				return false
@@ -62,6 +64,8 @@ func _fill_tile(tile_enum : String, rotation_degree : int) -> bool:
 				placedTile = instance
 				add_child(instance)
 				is_filled = true
+				for tile in get_affected_tiles():
+					grid.graph.add_edge(tile, placedTile, 1)
 				return true
 			else:
 				return false
@@ -77,6 +81,8 @@ func _fill_tile(tile_enum : String, rotation_degree : int) -> bool:
 				placedTile = instance
 				add_child(instance)
 				is_filled = true
+				for tile in get_affected_tiles():
+					grid.graph.add_edge(tile, placedTile, 1)
 				return true
 			else:
 				return false
@@ -92,6 +98,8 @@ func _fill_tile(tile_enum : String, rotation_degree : int) -> bool:
 				placedTile = instance
 				add_child(instance)
 				is_filled = true
+				for tile in get_affected_tiles():
+					grid.graph.add_edge(tile, placedTile, 1)
 				return true
 			else:
 				return false
@@ -107,11 +115,56 @@ func _fill_tile(tile_enum : String, rotation_degree : int) -> bool:
 				placedTile = instance
 				add_child(instance)
 				is_filled = true
+				for tile in get_affected_tiles():
+					grid.graph.add_edge(tile, placedTile, 1)
 				return true
 			else:
 				return false
 		_:
 			return false
+		print(grid.graph.adj)
+
+func get_affected_tiles():
+	var affected_tiles = []
+	var neighbors = get_neighbors()
+	
+	# Check if there's a connection to upper neighbor
+	if neighbors["Up"] != null:
+		if (neighbors["Up"].has_connection(Tile_Type.Direction.Down)
+		and placedTile.has_connection(Tile_Type.Direction.Up)):
+			affected_tiles.append(neighbors["Up"])
+	
+	# Check if there's a connection to lower neighbor
+	if neighbors["Down"] != null:
+		if (neighbors["Down"].has_connection(Tile_Type.Direction.Up)
+		and placedTile.has_connection(Tile_Type.Direction.Down)):
+			affected_tiles.append(neighbors["Down"])
+	
+	# Check if there's a connection to left neighbor
+	if neighbors["Left"] != null:
+		if (neighbors["Left"].has_connection(Tile_Type.Direction.Right)
+		and placedTile.has_connection(Tile_Type.Direction.Left)):
+			affected_tiles.append(neighbors["Left"])
+	
+	# Check if there's a connection to left neighbor
+	if neighbors["Right"] != null:
+		if (neighbors["Right"].has_connection(Tile_Type.Direction.Left)
+		and placedTile.has_connection(Tile_Type.Direction.Right)):
+			affected_tiles.append(neighbors["Right"])
+	
+	return affected_tiles
+
+func get_neighbors():
+	var neighbors = {}
+	var neighbor_array = grid._return_neighbours(self)
+	
+	neighbors["Up"] = neighbor_array[0]
+	neighbors["Right"] = neighbor_array[1]
+	neighbors["Down"] = neighbor_array[2] 
+	neighbors["Left"] = neighbor_array[3]
+	
+	return neighbors
+
 
 func is_tile_placeable(_placedTile : Tile_Type) -> bool:
 	
