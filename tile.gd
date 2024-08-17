@@ -14,6 +14,9 @@ var is_placing_allowed : bool
 @export
 var placedTile : Tile_Type
 
+func _ready() -> void:
+	print()
+
 func _fill_tile(tile_enum : String, rotation_degree : int):
 	placedTile = Tile_Type.new(tile_enum, rotation_degree)
 	$Sprite2D.modulate = Color.GREEN
@@ -93,3 +96,7 @@ func _get_connection_type(input_tile : Tile_Type, direction):
 					return Transport_Enum.Train
 				else:
 					return Transport_Enum.None
+
+
+func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	_fill_tile("Test", 0)

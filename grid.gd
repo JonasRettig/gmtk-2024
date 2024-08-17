@@ -44,3 +44,4 @@ func _return_neighbours(tile : Tile):
 		return_array.append(tile_array[tile.y_location][tile.x_location-1])
 	else : 
 		return_array.append(null)
+	return return_array
