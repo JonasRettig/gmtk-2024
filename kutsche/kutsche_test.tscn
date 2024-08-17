@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbg3kanq8uqix"]
+
+[ext_resource type="Script" path="res://kutsche/kutsche_test.gd" id="1_v1jso"]
+[ext_resource type="PackedScene" uid="uid://bydigqjuytbnv" path="res://kutsche/kutsche.tscn" id="2_hooa6"]
+
+[node name="KutscheTest" type="Node2D"]
+script = ExtResource("1_v1jso")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2114, 1100)
+zoom = Vector2(0.25, 0.25)
+
+[node name="Kutsche" parent="." instance=ExtResource("2_hooa6")]
+z_index = 1
+position = Vector2(680, 375)
+speed = 1.0

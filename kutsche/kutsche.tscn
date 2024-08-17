@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bydigqjuytbnv"]
+
+[ext_resource type="Script" path="res://kutsche/kutsche.gd" id="1_e14rb"]
+[ext_resource type="Texture2D" uid="uid://32xiwsfxsptl" path="res://kutsche/Kutsche.png" id="1_emikl"]
+
+[node name="Kutsche" type="Node2D"]
+script = ExtResource("1_e14rb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_emikl")
