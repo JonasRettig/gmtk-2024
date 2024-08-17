@@ -15,12 +15,15 @@ var is_placing_allowed : bool
 var placedTile : Tile_Type
 
 func _ready() -> void:
-	print()
+	if (x_location == 0 and y_location == 0):
+		$Sprite2D.visible = true
+		placedTile=Tile_Type.new("Start",0)
+		is_filled = true
 
 func _fill_tile(tile_enum : String, rotation_degree : int):
 	placedTile = Tile_Type.new(tile_enum, rotation_degree)
 	if(_is_tile_placeable(placedTile)):
-		$Sprite2D.modulate = Color.GREEN
+		$Sprite2D.visible = true
 		is_filled = true
 	else:
 		placedTile = null

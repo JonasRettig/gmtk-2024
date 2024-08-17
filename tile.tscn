@@ -10,6 +10,7 @@ size = Vector2(512, 512)
 script = ExtResource("1_msprj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(4, 4)
 texture = ExtResource("2_vnyjp")
 

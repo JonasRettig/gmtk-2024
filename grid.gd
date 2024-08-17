@@ -21,9 +21,6 @@ func _ready() -> void:
 			add_child(instance)
 			row.append(instance)
 		tile_array.append(row)
-	tile_array[0][0].placedTile=Tile_Type.new("Start",0)
-	tile_array[0][0].is_filled=true
-	tile_array[0][0].modulate = Color.GREEN
 
 	
 func _return_neighbours(tile : Tile):
