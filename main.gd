@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 var current_tile_selection : String = ""
 

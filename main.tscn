@@ -4,19 +4,15 @@
 [ext_resource type="Script" path="res://main.gd" id="1_lxfj8"]
 [ext_resource type="Script" path="res://map/ui.gd" id="2_x3u8u"]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node"]
 script = ExtResource("1_lxfj8")
 
 [node name="Grid" type="Node2D" parent="."]
 script = ExtResource("1_dvvhf")
 
-<<<<<<< HEAD
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 script = ExtResource("2_x3u8u")
-=======
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(2114, 1100)
-zoom = Vector2(0.25, 0.25)
->>>>>>> kutsche
