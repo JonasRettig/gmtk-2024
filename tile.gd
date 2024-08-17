@@ -16,7 +16,8 @@ var is_placing_allowed : bool
 func _ready() -> void:
 	if (x_location == 0 and y_location == 0):
 		$Sprite2D.visible = true
-		placedTile=Tile_Type.new("Start",0)
+		$Sprite2D.modulate = Color.AQUA
+		placedTile=Tile_Type.new("Hub",0)
 		is_filled = true
 
 func _fill_tile(tile_enum : String, rotation_degree : int):
@@ -24,6 +25,17 @@ func _fill_tile(tile_enum : String, rotation_degree : int):
 	if(_is_tile_placeable(placedTile)):
 		$Sprite2D.visible = true
 		is_filled = true
+		match tile_enum:
+			"Hub":
+				$Sprite2D.modulate = Color.AQUA
+			"Gerade":
+				$Sprite2D.modulate = Color.REBECCA_PURPLE
+			"Kurve":
+				$Sprite2D.modulate = Color.CORNFLOWER_BLUE
+			"T-Kreuzung":
+				$Sprite2D.modulate = Color.DARK_RED
+			"Kreuzung":
+				$Sprite2D.modulate = Color.GREEN
 	else:
 		placedTile = null
 
@@ -111,4 +123,5 @@ func _get_connection_type(input_tile : Tile_Type, direction):
 func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if(event is InputEventMouseButton):
 		if (event.pressed and event.button_index == MOUSE_BUTTON_LEFT):
-			_fill_tile("Start", 0)
+			_fill_tile(grid.current_tile, 0)
+			grid.tile_set()

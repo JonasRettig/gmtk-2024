@@ -1,10 +1,11 @@
 extends Node2D
 class_name Grid
 
-const x_scale : int = 100
-const y_scale : int = 100
+const x_scale : int = 10
+const y_scale : int = 10
 const tile_size : int = 512
 var tile_array : Array 
+var current_tile : String = ""
 
 var tileScene = preload("res://tile.tscn")
 
@@ -22,6 +23,9 @@ func _ready() -> void:
 			row.append(instance)
 		tile_array.append(row)
 
+func _process(_delta) -> void:
+	if(get_parent().current_tile_selection != null):
+		current_tile = get_parent().current_tile_selection
 	
 func _return_neighbours(tile : Tile):
 	var return_array : Array = [null, null, null, null]
@@ -38,3 +42,6 @@ func _return_neighbours(tile : Tile):
 	if(tile.x_location != 0):
 		return_array[3] = (tile_array[tile.y_location][tile.x_location-1].placedTile)
 	return return_array
+
+func tile_set():
+	get_parent().select_tile("")

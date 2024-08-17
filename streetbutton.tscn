@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://3ltpdevojf1n"]
+
+[ext_resource type="Script" path="res://streetbutton.gd" id="1_80gen"]
+[ext_resource type="Texture2D" uid="uid://cbbgbnk8e6cmy" path="res://icon.svg" id="2_tkhdo"]
+
+[node name="Streetbutton" type="TextureButton"]
+offset_right = 8.0
+offset_bottom = 8.0
+texture_normal = ExtResource("2_tkhdo")
+script = ExtResource("1_80gen")
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]
