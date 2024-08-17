@@ -1,8 +1,8 @@
 extends Node2D
 class_name Grid
 
-const x_scale : int = 10
-const y_scale : int = 10
+const x_scale : int = 100
+const y_scale : int = 100
 const tile_size : int = 512
 var tile_array : Array 
 

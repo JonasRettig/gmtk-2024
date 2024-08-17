@@ -7,12 +7,11 @@ var grid: Grid
 var x_location : int
 @export 
 var y_location : int
-@export 
-var is_filled : bool = false
-@export 
-var is_placing_allowed : bool
 @export
 var placedTile : Tile_Type
+
+var is_filled : bool = false
+var is_placing_allowed : bool
 
 func _ready() -> void:
 	if (x_location == 0 and y_location == 0):
@@ -29,6 +28,10 @@ func _fill_tile(tile_enum : String, rotation_degree : int):
 		placedTile = null
 
 func _is_tile_placeable(_placedTile : Tile_Type) -> bool:
+	
+	if(is_filled):
+		return false
+	
 	var neighbours : Array = grid._return_neighbours(self)
 
 	#Connection nach Oben
@@ -107,4 +110,5 @@ func _get_connection_type(input_tile : Tile_Type, direction):
 
 func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if(event is InputEventMouseButton):
-		_fill_tile("Start", 0)
+		if (event.pressed and event.button_index == MOUSE_BUTTON_LEFT):
+			_fill_tile("Start", 0)
