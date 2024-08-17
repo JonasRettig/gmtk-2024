@@ -28,30 +28,30 @@ func _fill_tile(tile_enum : String, rotation_degree : int):
 	else:
 		placedTile = null
 
-func _is_tile_placeable(placedTile : Tile_Type) -> bool:
+func _is_tile_placeable(_placedTile : Tile_Type) -> bool:
 	var neighbours : Array = grid._return_neighbours(self)
 
 	#Connection nach Oben
 	if(neighbours[0] != null):
-		var this_connection = _get_connection_type(placedTile, Direction_Enum.North);
+		var this_connection = _get_connection_type(_placedTile, Direction_Enum.North);
 		var neighbour_connection = _get_connection_type(neighbours[0], Direction_Enum.South);
 		if(this_connection != Transport_Enum.None and this_connection == neighbour_connection):
 			return true
 	#Connections nach Rechts
 	if(neighbours[1] != null):
-		var this_connection = _get_connection_type(placedTile, Direction_Enum.East);
+		var this_connection = _get_connection_type(_placedTile, Direction_Enum.East);
 		var neighbour_connection = _get_connection_type(neighbours[1], Direction_Enum.West);
 		if(this_connection != Transport_Enum.None and this_connection == neighbour_connection):
 			return true
 	#Connections nach Süden
 	if(neighbours[2] != null):
-		var this_connection = _get_connection_type(placedTile, Direction_Enum.South);
+		var this_connection = _get_connection_type(_placedTile, Direction_Enum.South);
 		var neighbour_connection = _get_connection_type(neighbours[2], Direction_Enum.North);
 		if(this_connection != Transport_Enum.None and this_connection == neighbour_connection):
 			return true
 	#Connections nach links
 	if(neighbours[3] != null):
-		var this_connection = _get_connection_type(placedTile, Direction_Enum.West);
+		var this_connection = _get_connection_type(_placedTile, Direction_Enum.West);
 		var neighbour_connection = _get_connection_type(neighbours[3], Direction_Enum.East);
 		if(this_connection != Transport_Enum.None and this_connection == neighbour_connection):
 			return true
@@ -105,6 +105,6 @@ func _get_connection_type(input_tile : Tile_Type, direction):
 					return Transport_Enum.None
 
 
-func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if(event is InputEventMouseButton):
 		_fill_tile("Start", 0)
