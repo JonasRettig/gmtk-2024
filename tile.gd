@@ -1,29 +1,28 @@
-extends Grid
+extends Node2D
 class_name Tile
+
+var grid: Grid
 
 @export 
 var x_location : int
 @export 
 var y_location : int
 @export 
-var is_filled : bool
+var is_filled : bool = false
 @export 
 var is_placing_allowed : bool
 @export
 var placedTile : Tile_Type
 
-func _init(_x_location, _y_location):
-	x_location = _x_location
-	y_location = _y_location
-	is_filled = false 
-
 func _fill_tile(tile_enum : String, rotation_degree : int):
 	placedTile = Tile_Type.new(tile_enum, rotation_degree)
+	$Sprite2D.modulate = Color.GREEN
+	print("Test")
 	if(_is_tile_placeable(placedTile)):
 		is_filled = true
 
 func _is_tile_placeable(placedTile : Tile_Type) -> bool:
-	var neighbours : Array = _return_neighbours(placedTile)
+	var neighbours : Array = grid._return_neighbours(placedTile)
 
 	#Connection nach Norden
 	if(neighbours[0] != null):

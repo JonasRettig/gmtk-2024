@@ -13,10 +13,13 @@ func _ready() -> void:
 	for y in y_scale:
 		var row : Array
 		for x in x_scale:
-			var instance = tileScene.instantiate()
+			var instance: Tile = tileScene.instantiate()
+			instance.grid = self
+			instance.x_location = x
+			instance.y_location = y
 			add_child(instance)
 			instance.position = Vector2(x*tile_size,y*tile_size)
-			row.append(Tile.new(y,x))
+			row.append(instance)
 		tile_array.append(row)
 	print(tile_array)
 	
