@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://box0nc2aew0lp"]
+
+[ext_resource type="Script" path="res://tile_type.gd" id="1_e35fc"]
+[ext_resource type="Texture2D" uid="uid://cbbgbnk8e6cmy" path="res://icon.svg" id="2_u2q30"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Grid" type="Node2D" parent="."]
+
+[node name="Tile" type="Node2D" parent="Grid"]
+script = ExtResource("1_e35fc")
+
+[node name="Sprite2D" type="Sprite2D" parent="Grid/Tile"]
+texture = ExtResource("2_u2q30")
