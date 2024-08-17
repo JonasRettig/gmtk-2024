@@ -5,7 +5,7 @@ class_name Graph extends Resource
 var adj = {}
 
 #Add edges including adding nodes, Time O(1) Space O(1)
-func add_edge(a, b, w):    
+func add_edge(a, b, w = 1 ):    
 	# Add nodes if they don't already exist
 	if a not in adj:
 		adj[a] = []
@@ -19,6 +19,10 @@ func add_edge(a, b, w):
 	# Create edge from node b to node a
 	var edge2 = GraphEdge.new(a, w)
 	adj[b].append(edge2)
+
+func add_node(node):
+	if node not in adj:
+		adj[node] = []
 
 #Find the edge between two nodes, Time O(n) Space O(1), n is number of neighbors 
 func find_edge_by_nodes(a, b):
@@ -100,3 +104,91 @@ func has_edge(a, b):
 	var edge2 = find_edge_by_nodes(b, a)
 	
 	return edge1 != null and edge2 != null
+
+#Check there is path from src and dest
+#BFS, Time O(V+E), Space O(V)
+func bfs_has_path(src, dest):
+	# Check if both nodes exist
+	if src not in adj or dest not in adj:
+		return false
+	
+	# Create list of visited nodes and a queue of nodes to visit
+	var visited = {} 
+	var queue = [] 
+	
+	# Mark the first node as visited and add it to the queue
+	visited[src] = true
+	queue.append(src) 
+	
+	# Look at the next node in the queue until all nodes were checked
+	while queue: 
+		var v = queue.pop_at(0)
+		
+		# Check if the destination is reached
+		if v == dest: 
+			return true 
+		
+		# Add all edges of the current node to the queue
+		for edge in adj[v]:  
+			var u = edge.neighbor              
+			if u not in visited:  
+				queue.append(u)
+				visited[u] = true
+	
+	# All nodes were visited. No path exists
+	return false 
+
+## Check there is path from src and dest
+## DFS, Time O(V+E), Space O(V)
+#func dfs_has_path(src, dest): 
+	## Check if both nodes exist
+	#if src not in adj or dest not in adj:
+		#return false
+	#
+	#var visited = {}
+	#return dfs_helper(src, dest, visited)
+#
+##DFS helper, Time O(V+E), Space O(V) 
+#func dfs_helper(v, dest, visited):
+	## Check if we've reached our destination
+	#if v == dest:
+		#return true
+	#
+	## Mark the current node as visited
+	#visited[v] = true
+	#
+	## Check every unvisited neighbor recursively
+	#for edge in adj[v]:
+		#var u = edge.neighbor
+		#if u not in visited:
+			#return dfs_helper(u, dest, visited)
+	#
+	#return false
+
+# Traversal starting from src, BFS, Time O(V+E), Space O(V)
+func bfs_traversal(src): 
+	# Check if the starting node exists
+	if src not in adj:
+		return
+	
+	# Prepare queue of nodes to visit and list of visited nodes
+	var queue = [] 
+	var visited = {} 
+	
+	# Start by considering the first node
+	queue.append(src) 
+	visited[src] = true 
+	
+	# Keep looking at the first element in the queue
+	while queue: 
+		var v = queue.pop_at(0) 
+		
+		# Run code for node
+		print(str(v))
+		
+		# Add all connected nodes to the queue
+		for edge in adj[v]:   
+			var u = edge.neighbor
+			if u not in visited:
+				queue.append(u) 
+				visited[u] = true
