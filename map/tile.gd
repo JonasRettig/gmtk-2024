@@ -122,7 +122,7 @@ func _fill_tile(tile_enum : String, rotation_degree : int) -> bool:
 				return false
 		_:
 			return false
-		print(grid.graph.adj)
+	print(grid.graph.adj)
 
 func get_affected_tiles():
 	var affected_tiles = []
