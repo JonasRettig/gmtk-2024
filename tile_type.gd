@@ -37,6 +37,13 @@ var connections : Array = [
 func _init(tile_name : String = "", rotation_degree := 0):
 	type_name = tile_name
 	match tile_name:
+		"Start":
+			connections[0] = true
+			connections[1] = true
+			connections[2] = true
+			connections[3] = true
+			connections[4] = true
+			connections[5] = true
 		"Test":
 			connections[0] = true
 			connections[1] = true
@@ -88,6 +95,3 @@ func _rotate_connection(connection : int):
 		11:
 			connections[connection] = false
 			connections[10] = true
-
-func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	super._fill_tile("Test", 0)

@@ -21,27 +21,20 @@ func _ready() -> void:
 			add_child(instance)
 			row.append(instance)
 		tile_array.append(row)
+
 	
 func _return_neighbours(tile : Tile):
-	var return_array : Array
+	var return_array : Array = [null, null, null, null]
 	#Über
 	if(tile.y_location != 0):
-		return_array.append(tile_array[tile.y_location-1][tile.x_location])
-	else : 
-		return_array.append(null)
+		return_array[0] = (tile_array[tile.y_location-1][tile.x_location].placedTile)
 	#Rechts
 	if(tile.x_location != x_scale-1):
-		return_array.append(tile_array[tile.y_location][tile.x_location + 1])
-	else : 
-		return_array.append(null)
+		return_array[1] = (tile_array[tile.y_location][tile.x_location + 1].placedTile)
 	#Unten
 	if(tile.y_location != y_scale - 1):
-		return_array.append(tile_array[tile.y_location+1][tile.x_location])
-	else : 
-		return_array.append(null)
+		return_array[2] = (tile_array[tile.y_location+1][tile.x_location].placedTile)
 	#Links
 	if(tile.x_location != 0):
-		return_array.append(tile_array[tile.y_location][tile.x_location-1])
-	else : 
-		return_array.append(null)
+		return_array[3] = (tile_array[tile.y_location][tile.x_location-1].placedTile)
 	return return_array
