@@ -8,6 +8,8 @@ var tile_array : Array
 var current_tile : String = ""
 var current_rotation : int = 0
 
+var graph: Graph
+
 var tileScene = preload("res://map/tile.tscn")
 
 # Called when the node enters the scene tree for the first time.

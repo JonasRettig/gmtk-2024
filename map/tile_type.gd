@@ -6,18 +6,14 @@ var type_name : String
 @export
 var rotation_degree : int
 
+enum Direction {Up, Down, Left, Right}
+
 # 0 -> car_n_w
 # 1 -> car_n_s
 # 2 -> car_n_e
 # 3 -> car_w_e
 # 4 -> car_w_s
 # 5 -> car_s_e
-# 6 -> train_n_w
-# 7 -> train_n_s
-# 8 -> train_n_e
-# 9 -> train_w_e
-# 10 -> train_w_s
-# 11 -> train_s_e
 
 var connections : Array = [
 	false,
@@ -26,13 +22,7 @@ var connections : Array = [
 	false,
 	false,
 	false,
-	false,
-	false,
-	false,
-	false,
-	false,
-	false
-]
+	]
 
 func _init(_tile_name : String = "", _rotation_degree := 0):
 	type_name = _tile_name
@@ -102,3 +92,20 @@ func _rotate_connection(connection : int):
 		11:
 			connections[connection] = false
 			connections[10] = true
+
+func has_connection(direction: Direction) -> bool:
+	match direction:
+		Direction.Up:
+			return connections[0] or connections[1] or connections[2]
+		Direction.Down:
+			return connections[1] or connections[4] or connections[5]
+		Direction.Left:
+			return connections[0] or connections[3] or connections[4]
+		Direction.Right:
+			return connections[2] or connections[3] or connections[5]
+		
+	
+	return false
+
+func _to_string() -> String:
+	return type_name
