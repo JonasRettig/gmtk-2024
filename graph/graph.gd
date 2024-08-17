@@ -1,16 +1,18 @@
 class_name Graph extends Resource
 
+# Biggest value an int can store
+const MAX_INT: int = 9223372036854775807
+
 # Adjecencies of the graph
 # All nodes and edges are stored in this dictionary
 var adj = {}
+var nodes = []
 
 #Add edges including adding nodes, Time O(1) Space O(1)
 func add_edge(a, b, w = 1 ):    
 	# Add nodes if they don't already exist
-	if a not in adj:
-		adj[a] = []
-	if b not in adj:
-		adj[b] = []
+	add_node(a)
+	add_node(b)
 	
 	# Create edge from node a to node b
 	var edge1 = GraphEdge.new(b, w)
@@ -23,6 +25,7 @@ func add_edge(a, b, w = 1 ):
 func add_node(node):
 	if node not in adj:
 		adj[node] = []
+		nodes.append(node)
 
 #Find the edge between two nodes, Time O(n) Space O(1), n is number of neighbors 
 func find_edge_by_nodes(a, b):
@@ -91,12 +94,13 @@ func remove_node(a):
 	
 	# Remove the node
 	adj.erase(a)
+	nodes.erase(a)
 	
 	return true
 
 #Check whether there is node by its key, Time O(1) Space O(1)
 func has_node(node):
-	return node in adj.keys()
+	return node in nodes
 
 #Check whether there is direct connection between two nodes, Time O(n), Space O(1)
 func has_edge(a, b):
@@ -192,3 +196,38 @@ func bfs_traversal(src):
 			if u not in visited:
 				queue.append(u) 
 				visited[u] = true
+
+func dijkstra(src):
+	var dist = {}
+	var queue = []
+	var prev = {}
+	
+	for node in nodes:
+		dist[node] = MAX_INT
+		queue.append(node)
+	
+	dist[src] = 0
+	
+	while queue:
+		var min_dist = MAX_INT
+		var u
+		
+		for element in queue:
+			if dist[element] < min_dist:
+				min_dist = dist[element]
+				u = element
+		
+		queue.erase(u)
+		
+		for edge in adj[u]:
+			var neighbor = edge.neighbor
+			
+			if neighbor in queue:
+				var alt = dist[u] + edge.weight
+				
+				if alt < dist[neighbor]:
+					dist[neighbor] = alt
+					prev[neighbor] = u
+	
+	return [dist, prev]
+	

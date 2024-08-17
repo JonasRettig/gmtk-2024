@@ -18,9 +18,11 @@ func _ready() -> void:
 	graph.add_edge(\"Straße 2\", \"Straße 3\")
 	graph.add_edge(\"Straße 3\", \"Haus 2\")
 	
-	print(graph.adj)
+	var dijkstra = graph.dijkstra(\"Poststation\")
 	
-	graph.bfs_traversal(\"Poststation\")
+	print(dijkstra[0])
+	print()
+	print(dijkstra[1])
 "
 
 [node name="GridTestScene" type="Node2D"]
