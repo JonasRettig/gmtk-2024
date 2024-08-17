@@ -33,31 +33,22 @@ func _is_tile_placeable(placedTile : Tile_Type) -> bool:
 		var neighbour_connection = _get_connection_type(neighbours[0], Direction_Enum.South);
 		if(this_connection != Transport_Enum.None and this_connection == neighbour_connection):
 			return true
-		else:
-			return false
-	elif(neighbours[1] != null):
+	if(neighbours[1] != null):
 		var this_connection = _get_connection_type(placedTile, Direction_Enum.East);
 		var neighbour_connection = _get_connection_type(neighbours[0], Direction_Enum.West);
 		if(this_connection != Transport_Enum.None and this_connection == neighbour_connection):
 			return true
-		else:
-			return false
-	elif(neighbours[2] != null):
+	if(neighbours[2] != null):
 		var this_connection = _get_connection_type(placedTile, Direction_Enum.South);
 		var neighbour_connection = _get_connection_type(neighbours[0], Direction_Enum.North);
 		if(this_connection != Transport_Enum.None and this_connection == neighbour_connection):
 			return true
-		else:
-			return false
-	elif(neighbours[3] != null):
+	if(neighbours[3] != null):
 		var this_connection = _get_connection_type(placedTile, Direction_Enum.West);
 		var neighbour_connection = _get_connection_type(neighbours[0], Direction_Enum.East);
 		if(this_connection != Transport_Enum.None and this_connection == neighbour_connection):
 			return true
-		else:
-			return false
-	else:
-		return false
+	return false
 			
 func _get_connection_type(input_tile : Tile_Type, direction):
 		match direction:
