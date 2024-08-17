@@ -7,19 +7,17 @@ var x_location : int
 var y_location : int
 @export 
 var is_filled : bool
+@export 
+var is_placing_allowed : bool
 @export
 var placedTile : Tile_Type
 
-
-
-func _init(_x_location:=0, _y_location:=0):
+func _init(_x_location, _y_location):
 	x_location = _x_location
 	y_location = _y_location
-	is_filled = false
-	placedTile = Tile_Type.new(null, 0)
+	is_filled = false 
 
-
-func _fill_tile(tile_enum : Tile_Enum, rotation_degree : int):
+func _fill_tile(tile_enum : String, rotation_degree : int):
 	placedTile = Tile_Type.new(tile_enum, rotation_degree)
 	if(_is_tile_placeable(placedTile)):
 		is_filled = true
