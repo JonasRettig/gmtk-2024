@@ -1,4 +1,4 @@
-extends Tile
+extends Node2D
 class_name Tile_Type
 
 @export
@@ -46,25 +46,25 @@ func _init(_tile_name : String = "", _rotation_degree := 0):
 			connections[5] = true
 		"Gerade":
 			connections[1] = true
-			_rotate_tile(_rotation_degree, connections)
+			rotate_tile(_rotation_degree, connections)
 		"Kurve":
 			connections[0] = true
-			_rotate_tile(_rotation_degree, connections)
+			rotate_tile(_rotation_degree, connections)
 		"T-Kreuzung":
 			connections[1] = true
 			connections[0] = true
-			_rotate_tile(_rotation_degree, connections)
+			rotate_tile(_rotation_degree, connections)
 		"Kreuzung":
 			connections[1] = true
 			connections[3] = true
 			
-func _rotate_tile(_rotation_degree : int, _connections : Array):
+func rotate_tile(_rotation_degree : int, _connections : Array):
 	for i in float(_rotation_degree) /90:
 		for x in _connections:
 			if(_connections[x] == true):
-				_rotate_connection(x)
+				rotate_connection(x)
 			
-func _rotate_connection(connection : int):
+func rotate_connection(connection : int):
 	match connection:
 		0:
 			connections[connection] = false
