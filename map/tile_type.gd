@@ -33,30 +33,6 @@ var connections : Array = [
 	false,
 	false
 ]
-
-func _init(_tile_name : String = "", _rotation_degree := 0):
-	type_name = _tile_name
-	match type_name:
-		"Hub":
-			connections[0] = true
-			connections[1] = true
-			connections[2] = true
-			connections[3] = true
-			connections[4] = true
-			connections[5] = true
-		"Gerade":
-			connections[1] = true
-			rotate_tile(_rotation_degree, connections)
-		"Kurve":
-			connections[0] = true
-			rotate_tile(_rotation_degree, connections)
-		"T-Kreuzung":
-			connections[1] = true
-			connections[0] = true
-			rotate_tile(_rotation_degree, connections)
-		"Kreuzung":
-			connections[1] = true
-			connections[3] = true
 			
 func rotate_tile(_rotation_degree : int, _connections : Array):
 	for i in float(_rotation_degree) /90:

@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://dd0hlfd0mttux"]
 
-[ext_resource type="Script" path="res://tile_type.gd" id="1_rtbyb"]
+[ext_resource type="Script" path="res://map/tile_type.gd" id="1_gvwpq"]
 [ext_resource type="Texture2D" uid="uid://b3srfkglbjfv6" path="res://art/kurve-cobalt-fond-blanc-700x700.jpg" id="2_kmupy"]
 
 [node name="Kurve" type="Node2D"]
-script = ExtResource("1_rtbyb")
+script = ExtResource("1_gvwpq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.6, 0.6)
