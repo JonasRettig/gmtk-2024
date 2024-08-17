@@ -22,6 +22,8 @@ func _fill_tile(tile_enum : String, rotation_degree : int):
 	if(_is_tile_placeable(placedTile)):
 		$Sprite2D.modulate = Color.GREEN
 		is_filled = true
+	else:
+		placedTile = null
 
 func _is_tile_placeable(placedTile : Tile_Type) -> bool:
 	var neighbours : Array = grid._return_neighbours(self)
@@ -46,7 +48,6 @@ func _is_tile_placeable(placedTile : Tile_Type) -> bool:
 			return true
 	#Connections nach links
 	if(neighbours[3] != null):
-		print("woooo")
 		var this_connection = _get_connection_type(placedTile, Direction_Enum.West);
 		var neighbour_connection = _get_connection_type(neighbours[3], Direction_Enum.East);
 		if(this_connection != Transport_Enum.None and this_connection == neighbour_connection):
