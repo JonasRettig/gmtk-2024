@@ -24,6 +24,7 @@ func _fill_tile(tile_enum : String, rotation_degree : int):
 	placedTile = Tile_Type.new(tile_enum, rotation_degree)
 	if(_is_tile_placeable(placedTile)):
 		$Sprite2D.visible = true
+		$Sprite2D.rotation = deg_to_rad(rotation_degree)
 		is_filled = true
 		match tile_enum:
 			"Hub":
@@ -123,5 +124,5 @@ func _get_connection_type(input_tile : Tile_Type, direction):
 func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if(event is InputEventMouseButton):
 		if (event.pressed and event.button_index == MOUSE_BUTTON_LEFT):
-			_fill_tile(grid.current_tile, 0)
+			_fill_tile(grid.current_tile, grid.current_rotation)
 			grid.tile_set()
