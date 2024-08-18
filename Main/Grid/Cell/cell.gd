@@ -21,8 +21,9 @@ func _on_cell_clicked():
 
 func _on_hover_changed(hovering: bool):
 	$Highlight.visible = hovering
-	$Highlight/HightliteTile.texture = get_tree().get_nodes_in_group("Buttons")[0].get_current_texture()
-	$Highlight/HightliteTile.rotation_degrees = grid.current_rot
+	if state == State.Empty:
+		$Highlight/HightliteTile.texture = get_tree().get_nodes_in_group("Buttons")[0].get_current_texture()
+		$Highlight/HightliteTile.rotation_degrees = grid.current_rot
 
 func _process(_delta: float) -> void:
 	$Highlight/HightliteTile.rotation_degrees = grid.current_rot
