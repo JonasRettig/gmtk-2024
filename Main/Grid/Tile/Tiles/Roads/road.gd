@@ -2,20 +2,15 @@ class_name Road extends "res://Main/Grid/Tile/tile.gd"
 
 enum Direction {North, East, South, West}
 
-signal rotation_changed(float)
-
 @export var north_connected: bool
 @export var east_connected: bool
 @export var south_connected: bool
 @export var west_connected: bool
 
-var rotation: float:
-	set(new_rotation):
-		rotation = new_rotation
-		rotation_changed.emit(new_rotation)
+var rotation: float
 
 func has_connection_to(dir: Direction):
-	var converted_dir = int(rotation / 90.0)
+	var converted_dir = rotate_dir(dir)
 	
 	match converted_dir:
 		Direction.North:
@@ -26,3 +21,6 @@ func has_connection_to(dir: Direction):
 			return south_connected
 		Direction.West:
 			return west_connected
+
+func rotate_dir(dir: Direction):
+	return int(dir + (rotation / 90.0)) % Direction.size()

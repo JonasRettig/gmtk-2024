@@ -77,19 +77,8 @@ func is_valid(tile: NewTile, cell: Cell):
 	var neighbors = get_neighbors(cell)
 	
 	for neighbor in neighbors:
-		match neighbor:
-			"Up":
-				if is_dir_valid(tile, neighbors, "Up"):
-					return true
-			"Down":
-				if is_dir_valid(tile, neighbors, "Down"):
-					return true
-			"Left":
-				if is_dir_valid(tile, neighbors, "Left"):
-					return true
-			"Right":
-				if is_dir_valid(tile, neighbors, "Right"):
-					return true
+		if is_dir_valid(tile, neighbors, neighbor):
+			return true
 	
 	# No connection to any neighbor
 	return false

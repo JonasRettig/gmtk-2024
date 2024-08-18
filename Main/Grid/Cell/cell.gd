@@ -25,7 +25,9 @@ func set_tile(new_tile: NewTile):
 	tile = new_tile
 	state = State.Filled
 	$Foreground.texture = tile.texture
-
+	
+	if tile is Road:
+		$Foreground.rotation_degrees = tile.rotation
 func has_connection_in_dir(dir: Road.Direction):
 	if state != State.Filled:
 		return false
