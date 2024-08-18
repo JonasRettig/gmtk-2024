@@ -100,6 +100,9 @@ func is_dir_valid(tile, neighbors, dir: String):
 	if neighbors[dir] == null:
 		return false
 	
+	if tile == null:
+		return false
+	
 	var tile_to_neighbor: Road.Direction
 	var neighbor_to_tile: Road.Direction
 	

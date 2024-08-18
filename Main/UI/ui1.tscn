@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cfueo8bq1m5sc"]
+[gd_scene load_steps=17 format=3 uid="uid://cfueo8bq1m5sc"]
 
 [ext_resource type="Texture2D" uid="uid://7vlk2316cafj" path="res://Main/UI/UI_Border.png" id="1_hliqh"]
 [ext_resource type="Texture2D" uid="uid://dfk84f81tec5a" path="res://Main/UI/UI_Briefmarke.png" id="2_ai7ek"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dxgg7gbwcx1t8" path="res://Main/UI/Buttons/UI_Button_002.png" id="3_rlhv1"]
 [ext_resource type="Texture2D" uid="uid://cya3ipeeldy8p" path="res://Main/UI/Buttons/UI_Button_002_Pressed.png" id="4_pe5qq"]
 [ext_resource type="BitMap" uid="uid://0o178jd3m3g7" path="res://Main/UI/Buttons/UI_Button_002_Bitmap.png" id="5_qnmkw"]
+[ext_resource type="Script" path="res://Main/UI/button.gd" id="6_wxs8o"]
 [ext_resource type="Texture2D" uid="uid://doi5x427notnu" path="res://Main/UI/Buttons/UI_Button_001.png" id="6_xtept"]
 [ext_resource type="Texture2D" uid="uid://drivsywj573qn" path="res://Main/UI/Buttons/UI_Button_001_Pressed.png" id="7_1pwxo"]
 [ext_resource type="BitMap" uid="uid://ddc8q7c6glfbn" path="res://Main/UI/Buttons/UI_Button_001_Bitmap.png" id="8_orjtp"]
@@ -59,30 +60,13 @@ columns = 4
 script = ExtResource("2_tfr2o")
 metadata/_edit_use_anchors_ = true
 
-[node name="AspectRatioContainer4" type="AspectRatioContainer" parent="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons"]
-layout_mode = 2
-mouse_filter = 2
-
-[node name="TextureButton_2" type="TextureButton" parent="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons/AspectRatioContainer4"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-size_flags_horizontal = 3
-texture_normal = ExtResource("3_rlhv1")
-texture_pressed = ExtResource("3_rlhv1")
-texture_hover = ExtResource("3_rlhv1")
-texture_disabled = ExtResource("3_rlhv1")
-texture_focused = ExtResource("4_pe5qq")
-texture_click_mask = ExtResource("5_qnmkw")
-ignore_texture_size = true
-stretch_mode = 4
-
-[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons"]
+[node name="Button1Container" type="AspectRatioContainer" parent="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 mouse_filter = 2
 
-[node name="TextureButton_1" type="TextureButton" parent="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons/AspectRatioContainer3"]
+[node name="Button1" type="TextureButton" parent="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons/Button1Container"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -94,14 +78,33 @@ texture_focused = ExtResource("7_1pwxo")
 texture_click_mask = ExtResource("8_orjtp")
 ignore_texture_size = true
 stretch_mode = 4
+script = ExtResource("6_wxs8o")
 
-[node name="AspectRatioContainer5" type="AspectRatioContainer" parent="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons"]
+[node name="Button2Container" type="AspectRatioContainer" parent="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Button2" type="TextureButton" parent="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons/Button2Container"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("3_rlhv1")
+texture_pressed = ExtResource("3_rlhv1")
+texture_hover = ExtResource("3_rlhv1")
+texture_disabled = ExtResource("3_rlhv1")
+texture_focused = ExtResource("4_pe5qq")
+texture_click_mask = ExtResource("5_qnmkw")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("6_wxs8o")
+
+[node name="Button3Container" type="AspectRatioContainer" parent="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 mouse_filter = 2
 
-[node name="TextureButton_3" type="TextureButton" parent="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons/AspectRatioContainer5"]
+[node name="Button3" type="TextureButton" parent="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons/Button3Container"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -113,14 +116,15 @@ texture_focused = ExtResource("10_qv0ql")
 texture_click_mask = ExtResource("11_mev2q")
 ignore_texture_size = true
 stretch_mode = 4
+script = ExtResource("6_wxs8o")
 
-[node name="AspectRatioContainer6" type="AspectRatioContainer" parent="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons"]
+[node name="Button4Container" type="AspectRatioContainer" parent="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 mouse_filter = 2
 
-[node name="TextureButton_4" type="TextureButton" parent="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons/AspectRatioContainer6"]
+[node name="Button4" type="TextureButton" parent="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons/Button4Container"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -132,6 +136,7 @@ texture_focused = ExtResource("13_tj6ga")
 texture_click_mask = ExtResource("14_43j2g")
 ignore_texture_size = true
 stretch_mode = 4
+script = ExtResource("6_wxs8o")
 
 [node name="AspectRatioContainer2" type="AspectRatioContainer" parent="CanvasLayer"]
 anchors_preset = 15
@@ -163,7 +168,7 @@ grow_horizontal = 0
 text = "1543"
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons/AspectRatioContainer4/TextureButton_2" to="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons" method="_on_texture_button_2_pressed"]
-[connection signal="pressed" from="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons/AspectRatioContainer3/TextureButton_1" to="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons" method="_on_texture_button_1_pressed"]
-[connection signal="pressed" from="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons/AspectRatioContainer5/TextureButton_3" to="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons" method="_on_texture_button_3_pressed"]
-[connection signal="pressed" from="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons/AspectRatioContainer6/TextureButton_4" to="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons" method="_on_texture_button_4_pressed"]
+[connection signal="pressed" from="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons/Button1Container/Button1" to="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons" method="_on_texture_button_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons/Button2Container/Button2" to="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons" method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons/Button3Container/Button3" to="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons" method="_on_texture_button_3_pressed"]
+[connection signal="pressed" from="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons/Button4Container/Button4" to="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons" method="_on_texture_button_4_pressed"]

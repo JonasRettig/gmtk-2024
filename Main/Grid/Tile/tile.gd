@@ -1,6 +1,6 @@
 class_name NewTile extends Resource
 
-enum Type {Post, Haus, Straße}
+enum Type {Post, Haus, Straße, None}
 
 @export var type: Type
 @export var texture: Texture2D
@@ -14,3 +14,5 @@ func has_connection_in_dir(dir: Road.Direction):
 		NewTile.Type.Straße:
 			var road = self as Road
 			return road.has_connection_to(dir)
+		NewTile.Type.None:
+			return false
