@@ -1,7 +1,7 @@
 extends Node2D
 class_name Grid
 
-const WIDTH: int = 9
+const WIDTH: int = 16
 const HEIGHT: int = 9
 const CELL_SIZE: int = 512
 
@@ -22,7 +22,7 @@ func _ready() -> void:
 			var cell: Cell = CELL.instantiate()
 			
 			# Set position
-			cell.position = Vector2(i * CELL_SIZE, j * CELL_SIZE)
+			cell.position = Vector2(j * CELL_SIZE, i * CELL_SIZE)
 			
 			# Connect signal
 			cell.cell_clicked.connect(_on_cell_clicked)
