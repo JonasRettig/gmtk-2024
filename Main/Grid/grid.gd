@@ -1,8 +1,8 @@
 extends Node2D
 class_name Grid
 
-const WIDTH: int = 16
-const HEIGHT: int = 9
+const WIDTH: int = 13
+const HEIGHT: int = 22
 const CELL_SIZE: int = 512
 
 const CELL = preload("res://Main/Grid/Cell/cell.tscn")
@@ -22,7 +22,7 @@ func _ready() -> void:
 			var cell: Cell = CELL.instantiate()
 			
 			# Set position
-			cell.position = Vector2(j * CELL_SIZE, i * CELL_SIZE)
+			cell.position = Vector2(i * CELL_SIZE, j * CELL_SIZE)
 			
 			# Connect signal
 			cell.cell_clicked.connect(_on_cell_clicked)
@@ -38,11 +38,17 @@ func _ready() -> void:
 	spawn_start_tiles()
 
 func spawn_start_tiles():
-	cells[3][3].set_tile(tile_loader.load_tile(NewTile.Type.Post))
+	cells[10][6].set_tile(tile_loader.load_tile(NewTile.Type.Post))
 	
-	cells[0][0].set_tile(tile_loader.load_tile(NewTile.Type.Haus))
-	cells[5][1].set_tile(tile_loader.load_tile(NewTile.Type.Haus))
-	cells[6][5].set_tile(tile_loader.load_tile(NewTile.Type.Haus))
+	for i in 8:
+		var col = randi_range(1, HEIGHT - 3)
+		var row = randi_range(1, WIDTH - 3)
+		
+		if not ((col == 9 or col == 10 or col == 11)
+		and (row == 5 or row == 6 or row == 7)):
+			cells[col][row].set_tile(tile_loader.load_tile(NewTile.Type.Haus))
+		
+	
 
 func get_neighbors(cell: Cell):
 	var neighbors = {}

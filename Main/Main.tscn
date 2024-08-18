@@ -12,6 +12,6 @@ position = Vector2(256, 256)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
-zoom = Vector2(0.2, 0.2)
+zoom = Vector2(0.175, 0.175)
 
 [node name="Control" parent="." instance=ExtResource("2_4ero5")]
