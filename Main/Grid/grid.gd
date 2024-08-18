@@ -11,6 +11,7 @@ var cells = []
 var current_rot: float
 
 @onready var tile_loader = TileLoader.new()
+@onready var graph = Graph.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -77,6 +78,14 @@ func place_tile(tile: NewTile, cell: Cell):
 	
 	if is_valid(tile, cell):
 		cell.set_tile(tile)
+		update_graph(tile, cell)
+
+func update_graph(tile: NewTile, cell: Cell):
+	var neighbors = get_neighbors(cell)
+	
+	for neighbor in neighbors:
+		if is_dir_valid(tile, neighbors, neighbor):
+			graph.add_edge(tile, neighbors[neighbor].tile)
 
 # Check if a tile is allowed to be placed on a cell
 func is_valid(tile: NewTile, cell: Cell):
