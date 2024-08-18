@@ -135,7 +135,6 @@ func _process(_delta: float):
 
 func rotate_right():
 	current_rot = int(current_rot + 90) % 360
-	print(current_rot)
 
 func _on_cell_clicked(cell: Cell):
 	place_tile(get_current_road(), cell)

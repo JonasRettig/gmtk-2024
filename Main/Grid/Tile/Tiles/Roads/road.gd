@@ -14,9 +14,7 @@ var rotation: float
 
 func has_connection_to(dir: Direction):
 	var converted_dir = rotate_dir(dir)
-	
-	print(converted_dir)
-	
+		
 	match converted_dir:
 		Direction.North:
 			return north_connected
