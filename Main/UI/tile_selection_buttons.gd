@@ -52,6 +52,8 @@ func get_random_road_type():
 		return Road.RoadType.Curve
 	elif range(60,100).has(int_match):
 		return Road.RoadType.Straight
+	else:
+		return Road.RoadType.Straight
 
 func _on_texture_button_1_pressed() -> void:
 	current_tile_selection = get_child(0).get_child(0).get_type()
