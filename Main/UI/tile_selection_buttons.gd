@@ -42,8 +42,16 @@ func refill_buttons():
 		var button = get_child(i).get_child(0)
 		button.type = get_random_road_type()
 
-func get_random_road_type() -> Road.RoadType:
-	return randi_range(1, Road.RoadType.size() - 1)
+func get_random_road_type():
+	var int_match : int = randi_range(0, 100)
+	if range(0,9).has(int_match):
+		return Road.RoadType.Cross
+	elif range(10,30).has(int_match):
+		return Road.RoadType.T_Cross
+	elif range(31,59).has(int_match):
+		return Road.RoadType.Curve
+	elif range(60,100).has(int_match):
+		return Road.RoadType.Straight
 
 func _on_texture_button_1_pressed() -> void:
 	current_tile_selection = get_child(0).get_child(0).get_type()
