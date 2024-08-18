@@ -77,7 +77,7 @@ func place_tile(tile: NewTile, cell: Cell):
 		(tile as Road).rotation = current_rot
 	
 	if is_valid(tile, cell):
-		cell.set_tile(tile)
+		cell.set_tile(tile)		
 		update_graph(tile, cell)
 
 func update_graph(tile: NewTile, cell: Cell):

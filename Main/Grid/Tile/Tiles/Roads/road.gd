@@ -26,7 +26,7 @@ func has_connection_to(dir: Direction):
 			return west_connected
 
 func rotate_dir(dir: Direction):
-	return int(dir + (rotation / 90.0)) % Direction.size()
+	return int(dir - (rotation / 90.0)) % Direction.size()
 
 func _to_string() -> String:
 	match road_type:
