@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Road" load_steps=3 format=3 uid="uid://dti58iegvw3h1"]
+
+[ext_resource type="Script" path="res://Main/Grid/Tile/Tiles/Roads/road.gd" id="1_1skcv"]
+[ext_resource type="Texture2D" uid="uid://cj3dmqs777g15" path="res://Main/Grid/Tile/Tiles/Roads/Straight/Street_Tile_Straight.png" id="2_g5lh6"]
+
+[resource]
+script = ExtResource("1_1skcv")
+north_connected = true
+east_connected = false
+south_connected = true
+west_connected = false
+type = 2
+texture = ExtResource("2_g5lh6")

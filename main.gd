@@ -1,11 +1,12 @@
-extends Node2D
+extends Node
 
+var current_tile_selection : String = ""
 
-# Called when the node enters the scene tree for the first time.
+@onready
+var graph: Graph = Graph.new()
+
 func _ready() -> void:
-	pass # Replace with function body.
+	$Grid.graph = graph
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func select_tile(tile : String):
+	current_tile_selection = tile

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://jiwoqh3xjeth"]
+
+[ext_resource type="Script" path="res://Main/Grid/Cell/cell.gd" id="1_32f3b"]
+[ext_resource type="Texture2D" uid="uid://d3atupo78mqgu" path="res://Main/Grid/Cell/BG_Tile_Grass001.png" id="1_pol1e"]
+[ext_resource type="Texture2D" uid="uid://dh4lrkslrifsx" path="res://Main/Grid/Cell/Hover.png" id="3_j0nlj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_apwvf"]
+size = Vector2(512, 512)
+
+[node name="Cell" type="Node2D"]
+script = ExtResource("1_32f3b")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_pol1e")
+
+[node name="Highlight" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_j0nlj")
+
+[node name="Foreground" type="Sprite2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_apwvf")

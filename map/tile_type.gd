@@ -1,4 +1,4 @@
-extends Tile
+extends Node2D
 class_name Tile_Type
 
 @export
@@ -6,18 +6,14 @@ var type_name : String
 @export
 var rotation_degree : int
 
+enum Direction {Up, Down, Left, Right}
+
 # 0 -> car_n_w
 # 1 -> car_n_s
 # 2 -> car_n_e
 # 3 -> car_w_e
 # 4 -> car_w_s
 # 5 -> car_s_e
-# 6 -> train_n_w
-# 7 -> train_n_s
-# 8 -> train_n_e
-# 9 -> train_w_e
-# 10 -> train_w_s
-# 11 -> train_s_e
 
 var connections : Array = [
 	false,
@@ -33,31 +29,14 @@ var connections : Array = [
 	false,
 	false
 ]
-
-func _init(tile_name : String = "", rotation_degree := 0):
-	type_name = tile_name
-	match tile_name:
-		"Start":
-			connections[0] = true
-			connections[1] = true
-			connections[2] = true
-			connections[3] = true
-			connections[4] = true
-			connections[5] = true
-		"Test":
-			connections[0] = true
-			connections[1] = true
-			_rotate_tile(rotation_degree, connections)
-		"Test2":
-			connections[0] = true
 			
-func _rotate_tile(rotation_degree : int, connections : Array):
-	for i in rotation_degree/90:
-		for x in connections:
-			if(connections[x] == true):
-				_rotate_connection(x)
+func rotate_tile(_rotation_degree : int, _connections : Array):
+	for i in float(_rotation_degree) /90:
+		for x in _connections:
+			if(_connections[x] == true):
+				rotate_connection(x)
 			
-func _rotate_connection(connection : int):
+func rotate_connection(connection : int):
 	match connection:
 		0:
 			connections[connection] = false
@@ -95,3 +74,20 @@ func _rotate_connection(connection : int):
 		11:
 			connections[connection] = false
 			connections[10] = true
+
+func has_connection(direction: Direction) -> bool:
+	match direction:
+		Direction.Up:
+			return connections[0] or connections[1] or connections[2]
+		Direction.Down:
+			return connections[1] or connections[4] or connections[5]
+		Direction.Left:
+			return connections[0] or connections[3] or connections[4]
+		Direction.Right:
+			return connections[2] or connections[3] or connections[5]
+		
+	
+	return false
+
+func _to_string() -> String:
+	return type_name

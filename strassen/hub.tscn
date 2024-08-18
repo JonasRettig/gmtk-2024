@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://d02bdquyoqdr1"]
+
+[ext_resource type="Script" path="res://map/tile_type.gd" id="1_4sbxt"]
+[ext_resource type="Texture2D" uid="uid://ccfrs5myo5lq1" path="res://art/dhl-paketzentrum-ludwigsfelde-01.jpg" id="2_pn4jm"]
+
+[node name="Hub" type="Node2D"]
+script = ExtResource("1_4sbxt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.12, 0.2)
+texture = ExtResource("2_pn4jm")
