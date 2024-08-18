@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjfx5gg0kpnk6"]
+[gd_scene load_steps=4 format=3 uid="uid://donpbw047hwtl"]
 
 [ext_resource type="Script" path="res://map/grid.gd" id="1_dvvhf"]
 [ext_resource type="Script" path="res://main.gd" id="1_lxfj8"]
 [ext_resource type="Script" path="res://map/ui.gd" id="2_x3u8u"]
 
-[node name="Main" type="Node"]
+[node name="Main2" type="Node"]
 script = ExtResource("1_lxfj8")
 
 [node name="Grid" type="Node2D" parent="."]

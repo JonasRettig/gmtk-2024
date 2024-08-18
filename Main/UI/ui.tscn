@@ -1,0 +1,134 @@
+[gd_scene load_steps=15 format=3 uid="uid://bgd5ublpxab63"]
+
+[ext_resource type="Texture2D" uid="uid://7vlk2316cafj" path="res://Main/UI/UI_Border.png" id="1_5ch5v"]
+[ext_resource type="Texture2D" uid="uid://dfk84f81tec5a" path="res://Main/UI/UI_Briefmarke.png" id="2_1wuiy"]
+[ext_resource type="Texture2D" uid="uid://ci8gdado5twrg" path="res://Main/UI/UI_Button_001.png" id="3_64t1e"]
+[ext_resource type="Texture2D" uid="uid://8aqv1t34acqj" path="res://Main/UI/UI_Button_001_Pressed.png" id="4_sjqqp"]
+[ext_resource type="BitMap" uid="uid://blfpy54dd4gc2" path="res://Main/UI/UI_Button_001_Bitmap.png" id="5_iuu4f"]
+[ext_resource type="Texture2D" uid="uid://d1vt2u5t7q8r6" path="res://Main/UI/UI_Button_002.png" id="6_rcj8c"]
+[ext_resource type="Texture2D" uid="uid://65bruno725qn" path="res://Main/UI/UI_Button_002_Pressed.png" id="7_gbnex"]
+[ext_resource type="BitMap" uid="uid://64rmxfosenxk" path="res://Main/UI/UI_Button_002_Bitmap.png" id="8_qganp"]
+[ext_resource type="Texture2D" uid="uid://d0ty1mi7w2igv" path="res://Main/UI/UI_Button_003.png" id="9_da68r"]
+[ext_resource type="Texture2D" uid="uid://dd5kdg18wj6dn" path="res://Main/UI/UI_Button_003_Pressed.png" id="10_tbtom"]
+[ext_resource type="BitMap" uid="uid://b5a0l8r7lyrbw" path="res://Main/UI/UI_Button_003_Bitmap.png" id="11_6amvs"]
+[ext_resource type="Texture2D" uid="uid://cdn8h2g6ocdff" path="res://Main/UI/UI_Button_004.png" id="12_dtplp"]
+[ext_resource type="Texture2D" uid="uid://ctotqdaerjr1k" path="res://Main/UI/UI_Button_004_Pressed.png" id="13_vsay1"]
+[ext_resource type="BitMap" uid="uid://c1pea1vjj4s1u" path="res://Main/UI/UI_Button_004_Bitmap.png" id="14_m1mnn"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect_Border" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_5ch5v")
+expand_mode = 1
+
+[node name="TextureRect_Stamp" type="TextureRect" parent="."]
+layout_mode = 2
+offset_top = 0.00402832
+offset_right = 1152.0
+offset_bottom = 647.996
+mouse_filter = 2
+texture = ExtResource("2_1wuiy")
+expand_mode = 1
+
+[node name="TextureButton_1" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+offset_top = 0.00402832
+offset_right = 1152.0
+offset_bottom = 647.996
+size_flags_horizontal = 3
+texture_normal = ExtResource("3_64t1e")
+texture_pressed = ExtResource("3_64t1e")
+texture_hover = ExtResource("3_64t1e")
+texture_disabled = ExtResource("3_64t1e")
+texture_focused = ExtResource("4_sjqqp")
+texture_click_mask = ExtResource("5_iuu4f")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="TextureButton_2" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+offset_top = 0.00402832
+offset_right = 1152.0
+offset_bottom = 647.996
+size_flags_horizontal = 3
+texture_normal = ExtResource("6_rcj8c")
+texture_pressed = ExtResource("6_rcj8c")
+texture_hover = ExtResource("6_rcj8c")
+texture_disabled = ExtResource("6_rcj8c")
+texture_focused = ExtResource("7_gbnex")
+texture_click_mask = ExtResource("8_qganp")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="TextureButton_3" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+offset_top = 0.00402832
+offset_right = 1152.0
+offset_bottom = 647.996
+size_flags_horizontal = 3
+texture_normal = ExtResource("9_da68r")
+texture_pressed = ExtResource("9_da68r")
+texture_hover = ExtResource("9_da68r")
+texture_disabled = ExtResource("9_da68r")
+texture_focused = ExtResource("10_tbtom")
+texture_click_mask = ExtResource("11_6amvs")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="TextureButton_4" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+offset_top = 0.00402832
+offset_right = 1152.0
+offset_bottom = 647.996
+size_flags_horizontal = 3
+texture_normal = ExtResource("12_dtplp")
+texture_pressed = ExtResource("12_dtplp")
+texture_hover = ExtResource("12_dtplp")
+texture_disabled = ExtResource("12_dtplp")
+texture_focused = ExtResource("13_vsay1")
+texture_click_mask = ExtResource("14_m1mnn")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+offset_top = 0.00402832
+offset_right = 1152.0
+offset_bottom = 647.996
+theme_override_constants/margin_right = 50
+
+[node name="Label" type="Label" parent="MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "135"
+horizontal_alignment = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+ratio = 1.7778
