@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bsyduapmykk8q"]
+[gd_scene load_steps=4 format=3 uid="uid://bsyduapmykk8q"]
 
+[ext_resource type="Script" path="res://Main/main.gd" id="1_4cgdt"]
 [ext_resource type="PackedScene" uid="uid://dhc71jh4bbu1s" path="res://Main/Grid/grid.tscn" id="1_52i6l"]
 [ext_resource type="PackedScene" uid="uid://cfueo8bq1m5sc" path="res://Main/UI/ui1.tscn" id="2_4ero5"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_4cgdt")
 
 [node name="Grid" parent="." instance=ExtResource("1_52i6l")]
 position = Vector2(256, 256)

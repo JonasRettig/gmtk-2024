@@ -63,7 +63,9 @@ func get_cell(i: int, j: int) -> Cell:
 	return cells[i][j]
 
 func get_current_tile():
-	return tile_loader.load_tile(NewTile.Type.Straße)
+	return tile_loader.load_tile(
+		get_tree().get_nodes_in_group("Buttons")[0].get_current_tile()
+	)
 
 func place_tile(tile: NewTile, cell: Cell):
 	if tile is Road:
