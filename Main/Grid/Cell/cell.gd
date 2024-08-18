@@ -24,7 +24,7 @@ func _on_hover_changed(hovering: bool):
 	$Highlight/HightliteTile.texture = get_tree().get_nodes_in_group("Buttons")[0].get_current_texture()
 	$Highlight/HightliteTile.rotation_degrees = grid.current_rot
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	$Highlight/HightliteTile.rotation_degrees = grid.current_rot
 
 func set_tile(new_tile: NewTile):
