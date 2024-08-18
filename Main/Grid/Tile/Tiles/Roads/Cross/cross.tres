@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Road" load_steps=3 format=3 uid="uid://h3ufmkvq3ysq"]
+
+[ext_resource type="Script" path="res://Main/Grid/Tile/Tiles/Roads/road.gd" id="1_8htw5"]
+[ext_resource type="Texture2D" uid="uid://cg8hv6bfa4pcd" path="res://Main/Grid/Tile/Tiles/Roads/Cross/Street_Tile_Cross.png" id="2_3jm1h"]
+
+[resource]
+script = ExtResource("1_8htw5")
+road_type = 1
+north_connected = true
+east_connected = true
+south_connected = true
+west_connected = true
+type = 2
+texture = ExtResource("2_3jm1h")
