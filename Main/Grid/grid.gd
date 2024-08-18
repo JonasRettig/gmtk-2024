@@ -77,7 +77,7 @@ func place_tile(tile: NewTile, cell: Cell):
 		(tile as Road).rotation = current_rot
 	
 	if is_valid(tile, cell):
-		cell.set_tile(tile)		
+		cell.set_tile(tile)
 		update_graph(tile, cell)
 
 func update_graph(tile: NewTile, cell: Cell):
@@ -135,6 +135,7 @@ func _process(_delta: float):
 
 func rotate_right():
 	current_rot = int(current_rot + 90) % 360
+	print(current_rot)
 
 func _on_cell_clicked(cell: Cell):
 	place_tile(get_current_road(), cell)
