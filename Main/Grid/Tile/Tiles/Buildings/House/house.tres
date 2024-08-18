@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="NewTile" load_steps=3 format=3 uid="uid://bhlxotv347r3m"]
+
+[ext_resource type="Script" path="res://Main/Grid/Tile/tile.gd" id="1_7ny5u"]
+[ext_resource type="Texture2D" uid="uid://cdam6a63wid1o" path="res://Main/Grid/Tile/Tiles/Buildings/House/Building_Tile_HouseA_Shadow.png" id="2_vijlx"]
+
+[resource]
+script = ExtResource("1_7ny5u")
+type = 1
+texture = ExtResource("2_vijlx")

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="NewTile" load_steps=3 format=3 uid="uid://d3l604h1ufr8m"]
+
+[ext_resource type="Script" path="res://Main/Grid/Tile/tile.gd" id="1_s8n74"]
+[ext_resource type="Texture2D" uid="uid://xthow3k01jou" path="res://Main/Grid/Tile/Tiles/Buildings/Post Office/Post Office.png" id="2_1x5wq"]
+
+[resource]
+script = ExtResource("1_s8n74")
+type = 0
+texture = ExtResource("2_1x5wq")
