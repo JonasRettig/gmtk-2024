@@ -74,6 +74,10 @@ func place_tile(tile: NewTile, cell: Cell):
 	
 	if is_valid(tile, cell):
 		cell.set_tile(tile)
+		update_graph()
+
+func update_graph():
+	pass
 
 # Check if a tile is allowed to be placed on a cell
 func is_valid(tile: NewTile, cell: Cell):
