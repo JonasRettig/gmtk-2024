@@ -62,8 +62,9 @@ func get_cell(i: int, j: int) -> Cell:
 	
 	return cells[i][j]
 
-func get_current_tile():
+func get_current_road():
 	return tile_loader.load_tile(
+		NewTile.Type.Straße,
 		get_tree().get_nodes_in_group("Buttons")[0].get_current_tile()
 	)
 
@@ -124,4 +125,4 @@ func rotate_right():
 	current_rot = int(current_rot + 90) % 360
 
 func _on_cell_clicked(cell: Cell):
-	place_tile(get_current_tile(), cell)
+	place_tile(get_current_road(), cell)

@@ -1,6 +1,6 @@
 extends TextureButton
 
-var type : NewTile.Type
+var type : Road.RoadType
 
-func get_type() -> NewTile.Type:
+func get_type() -> Road.RoadType:
 	return type

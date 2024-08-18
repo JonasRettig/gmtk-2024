@@ -1,7 +1,7 @@
 class_name Road extends "res://Main/Grid/Tile/tile.gd"
 
 enum Direction {North, East, South, West}
-enum RoadType {Straight, Cross, Curve, T_Cross}
+enum RoadType {None, Straight, Cross, Curve, T_Cross}
 
 @export var road_type: RoadType
 
