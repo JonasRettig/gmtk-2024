@@ -25,6 +25,7 @@ func set_tile(new_tile: NewTile):
 	tile = new_tile
 	state = State.Filled
 	$Foreground.texture = tile.texture
+	get_tree().get_nodes_in_group("Buttons")[0].tile_placed_down()
 	
 	if tile is Road:
 		$Foreground.rotation_degrees = tile.rotation
