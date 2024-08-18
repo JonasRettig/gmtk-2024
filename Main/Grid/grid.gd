@@ -1,4 +1,5 @@
 extends Node2D
+class_name Grid
 
 const WIDTH: int = 9
 const HEIGHT: int = 9
@@ -24,6 +25,8 @@ func _ready() -> void:
 			
 			# Connect signal
 			cell.cell_clicked.connect(_on_cell_clicked)
+			
+			cell.grid = self
 			
 			# Add cell to the scene
 			$Cells.add_child(cell)

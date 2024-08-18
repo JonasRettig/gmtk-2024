@@ -17,6 +17,8 @@ texture = ExtResource("1_pol1e")
 visible = false
 texture = ExtResource("3_j0nlj")
 
+[node name="HightliteTile" type="Sprite2D" parent="Highlight"]
+
 [node name="Foreground" type="Sprite2D" parent="."]
 
 [node name="Area2D" type="Area2D" parent="."]

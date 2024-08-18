@@ -6,6 +6,7 @@ enum State {Empty, Locked, Filled}
 
 var state: State = State.Empty
 var tile: NewTile
+var grid : Grid
 
 @onready
 var input_manager = CellInputManager.new($Area2D)
@@ -20,6 +21,11 @@ func _on_cell_clicked():
 
 func _on_hover_changed(hovering: bool):
 	$Highlight.visible = hovering
+	$Highlight/HightliteTile.texture = get_tree().get_nodes_in_group("Buttons")[0].get_current_texture()
+	$Highlight/HightliteTile.rotation_degrees = grid.current_rot
+
+func _process(delta: float) -> void:
+	$Highlight/HightliteTile.rotation_degrees = grid.current_rot
 
 func set_tile(new_tile: NewTile):
 	tile = new_tile

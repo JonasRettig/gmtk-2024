@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://dtbh60s61nra1" path="res://Main/UI/Buttons/UI_Button_004_Pressed.png" id="13_tj6ga"]
 [ext_resource type="BitMap" uid="uid://0d56j7dl3xj0" path="res://Main/UI/Buttons/UI_Button_004_Bitmap.png" id="14_43j2g"]
 
-[node name="Control" type="Control"]
+[node name="Control2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -107,6 +107,7 @@ stretch_mode = 4
 script = ExtResource("6_wxs8o")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons/Button2Container/Button2"]
+layout_mode = 0
 offset_left = 66.0
 offset_top = 11.0
 offset_right = 578.0
@@ -134,6 +135,7 @@ stretch_mode = 4
 script = ExtResource("6_wxs8o")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons/Button3Container/Button3"]
+layout_mode = 0
 offset_left = 65.0
 offset_top = 10.0
 offset_right = 577.0
@@ -161,6 +163,7 @@ stretch_mode = 4
 script = ExtResource("6_wxs8o")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons/Button4Container/Button4"]
+layout_mode = 0
 offset_left = 65.0
 offset_top = 10.0
 offset_right = 577.0

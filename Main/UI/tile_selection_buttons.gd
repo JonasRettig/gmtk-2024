@@ -10,6 +10,19 @@ func _ready():
 
 func get_current_tile():
 	return current_tile_selection
+	
+func get_current_texture():
+	match current_tile_selection:
+		Road.RoadType.Straight:
+			return TileLoader.STRAIGHT.texture
+		Road.RoadType.Cross:
+			return TileLoader.CROSS.texture
+		Road.RoadType.Curve:
+			return TileLoader.CURVE.texture
+		Road.RoadType.T_Cross:
+			return TileLoader.T_CROSS.texture
+		Road.RoadType.None:
+			return null
 
 func tile_placed_down():
 	current_tile_selection = Road.RoadType.None
