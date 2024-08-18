@@ -49,12 +49,12 @@ stretch_mode = 4
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0772569
-anchor_top = 1.04167
-anchor_right = 0.0772569
-anchor_bottom = 1.04167
+anchor_left = 0.0538194
+anchor_top = 0.998463
+anchor_right = 0.0538194
+anchor_bottom = 0.998463
 offset_top = -100.0
-offset_right = 412.0
+offset_right = 512.0
 grow_vertical = 0
 columns = 4
 script = ExtResource("2_tfr2o")
@@ -67,7 +67,7 @@ size_flags_vertical = 0
 mouse_filter = 2
 
 [node name="Button1" type="TextureButton" parent="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons/Button1Container"]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(200, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 texture_normal = ExtResource("6_xtept")
@@ -80,12 +80,20 @@ ignore_texture_size = true
 stretch_mode = 4
 script = ExtResource("6_wxs8o")
 
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons/Button1Container/Button1"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 10.0
+offset_right = 577.0
+offset_bottom = 522.0
+scale = Vector2(0.12, 0.12)
+
 [node name="Button2Container" type="AspectRatioContainer" parent="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons"]
 layout_mode = 2
 mouse_filter = 2
 
 [node name="Button2" type="TextureButton" parent="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons/Button2Container"]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(200, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 texture_normal = ExtResource("3_rlhv1")
@@ -98,6 +106,13 @@ ignore_texture_size = true
 stretch_mode = 4
 script = ExtResource("6_wxs8o")
 
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons/Button2Container/Button2"]
+offset_left = 66.0
+offset_top = 11.0
+offset_right = 578.0
+offset_bottom = 523.0
+scale = Vector2(0.12, 0.12)
+
 [node name="Button3Container" type="AspectRatioContainer" parent="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons"]
 layout_mode = 2
 size_flags_horizontal = 0
@@ -105,7 +120,7 @@ size_flags_vertical = 0
 mouse_filter = 2
 
 [node name="Button3" type="TextureButton" parent="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons/Button3Container"]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(200, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 texture_normal = ExtResource("9_q221j")
@@ -118,6 +133,13 @@ ignore_texture_size = true
 stretch_mode = 4
 script = ExtResource("6_wxs8o")
 
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons/Button3Container/Button3"]
+offset_left = 65.0
+offset_top = 10.0
+offset_right = 577.0
+offset_bottom = 522.0
+scale = Vector2(0.12, 0.12)
+
 [node name="Button4Container" type="AspectRatioContainer" parent="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons"]
 layout_mode = 2
 size_flags_horizontal = 0
@@ -125,7 +147,7 @@ size_flags_vertical = 0
 mouse_filter = 2
 
 [node name="Button4" type="TextureButton" parent="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons/Button4Container"]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(200, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 texture_normal = ExtResource("12_rj6vq")
@@ -138,7 +160,15 @@ ignore_texture_size = true
 stretch_mode = 4
 script = ExtResource("6_wxs8o")
 
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/AspectRatioContainer/TextureRect_Border/TileSelectionButtons/Button4Container/Button4"]
+offset_left = 65.0
+offset_top = 10.0
+offset_right = 577.0
+offset_bottom = 522.0
+scale = Vector2(0.12, 0.12)
+
 [node name="AspectRatioContainer2" type="AspectRatioContainer" parent="CanvasLayer"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
