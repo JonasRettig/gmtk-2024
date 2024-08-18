@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b7ltsnwg81uyh"]
+[gd_scene load_steps=8 format=3 uid="uid://qr5xsvdgakrb"]
 
 [ext_resource type="Script" path="res://startmenu.gd" id="1_gptcq"]
 [ext_resource type="Texture2D" uid="uid://ctnpwkk0x5ilr" path="res://Main/UI/StartMenu/StartMenu_BG.png" id="1_pr11w"]
@@ -18,9 +18,10 @@ grow_vertical = 2
 script = ExtResource("1_gptcq")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 2
-offset_right = 1152.0
-offset_bottom = 647.992
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_pr11w")
@@ -29,10 +30,10 @@ stretch_mode = 4
 [node name="Button" type="Button" parent="TextureRect"]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
-offset_left = 709.0
-offset_top = 303.996
-offset_right = 999.0
-offset_bottom = 349.996
+offset_left = 1111.0
+offset_top = 527.0
+offset_right = 1401.0
+offset_bottom = 573.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 8
@@ -52,10 +53,10 @@ icon_alignment = 1
 [node name="Button2" type="Button" parent="TextureRect"]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
-offset_left = 709.0
-offset_top = 363.996
-offset_right = 999.0
-offset_bottom = 409.996
+offset_left = 1111.0
+offset_top = 637.0
+offset_right = 1401.0
+offset_bottom = 683.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 8
@@ -75,10 +76,10 @@ icon_alignment = 1
 [node name="Button3" type="Button" parent="TextureRect"]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
-offset_left = 709.0
-offset_top = 422.996
-offset_right = 999.0
-offset_bottom = 468.996
+offset_left = 1111.0
+offset_top = 728.0
+offset_right = 1401.0
+offset_bottom = 774.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 8
@@ -96,19 +97,24 @@ icon = ExtResource("3_2gha5")
 icon_alignment = 1
 
 [node name="Credits" type="TextureRect" parent="."]
-layout_mode = 2
-offset_top = 0.00402832
-offset_right = 1152.0
-offset_bottom = 647.996
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("2_45qqw")
 stretch_mode = 4
 
 [node name="Controls" type="TextureRect" parent="."]
 visible = false
-offset_top = 0.00402832
-offset_right = 1152.0
-offset_bottom = 647.996
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("7_crf6v")
 stretch_mode = 4

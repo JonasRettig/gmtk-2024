@@ -1,8 +1,8 @@
 extends Node2D
 class_name Grid
 
-const WIDTH: int = 13
-const HEIGHT: int = 22
+const WIDTH: int = 30
+const HEIGHT: int = 40
 const CELL_SIZE: int = 512
 
 const CELL = preload("res://Main/Grid/Cell/cell.tscn")
@@ -40,9 +40,11 @@ func _ready() -> void:
 func spawn_start_tiles():
 	cells[10][6].set_tile(tile_loader.load_tile(NewTile.Type.Post))
 	
-	for i in 8:
-		var col = randi_range(1, HEIGHT - 3)
-		var row = randi_range(1, WIDTH - 3)
+	var amount = int((WIDTH * HEIGHT) * 0.05)
+	
+	for i in amount:
+		var col = randi_range(1, HEIGHT - 1)
+		var row = randi_range(1, WIDTH - 1)
 		
 		if not ((col == 9 or col == 10 or col == 11)
 		and (row == 5 or row == 6 or row == 7)):
