@@ -4,11 +4,11 @@ const POST = preload("res://Main/Grid/Tile/Tiles/Buildings/Post Office/post_offi
 const HOUSE = preload("res://Main/Grid/Tile/Tiles/Buildings/House/house.tres")
 const STRAIGHT = preload("res://Main/Grid/Tile/Tiles/Roads/Straight/straight.tres")
 
-func load_tile(type: NewTile.Type):
+func load_tile(type: NewTile.Type):	
 	match type:
 		NewTile.Type.Post:
-			return POST
+			return POST.duplicate()
 		NewTile.Type.Haus:
-			return HOUSE
+			return HOUSE.duplicate()
 		NewTile.Type.Straße:
-			return STRAIGHT
+			return STRAIGHT.duplicate()

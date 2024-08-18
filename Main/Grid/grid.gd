@@ -7,6 +7,7 @@ const CELL_SIZE: int = 512
 const CELL = preload("res://Main/Grid/Cell/cell.tscn")
 
 var cells = []
+var current_rot: float
 
 @onready var tile_loader = TileLoader.new()
 
@@ -65,6 +66,9 @@ func get_current_tile():
 	return tile_loader.load_tile(NewTile.Type.Straße)
 
 func place_tile(tile: NewTile, cell: Cell):
+	if tile is Road:
+		(tile as Road).rotation = current_rot
+	
 	if is_valid(tile, cell):
 		cell.set_tile(tile)
 
@@ -117,6 +121,13 @@ func is_dir_valid(tile, neighbors, dir: String):
 		return false
 	
 	return true
+
+func _process(_delta: float):
+	if Input.is_action_just_released("Rotate Tile Right"):
+		rotate_right()
+
+func rotate_right():
+	current_rot = int(current_rot + 90) % 360
 
 func _on_cell_clicked(cell: Cell):
 	place_tile(get_current_tile(), cell)
