@@ -1,0 +1,103 @@
+[gd_scene load_steps=6 format=3 uid="uid://cykp6s2hvowvj"]
+
+[ext_resource type="Texture2D" uid="uid://ctnpwkk0x5ilr" path="res://Main/UI/StartMenu/StartMenu_BG.png" id="1_pr11w"]
+[ext_resource type="Texture2D" uid="uid://bsku1a5xao7xj" path="res://Main/UI/StartMenu/StartMenu_Credits.png" id="2_45qqw"]
+[ext_resource type="FontFile" uid="uid://x6o7qjmyio2m" path="res://Main/UI/StartMenu/Rye-Regular.ttf" id="2_r8xby"]
+[ext_resource type="Texture2D" uid="uid://b01iqpbk0fv85" path="res://Main/UI/StartMenu/StartMenu_Button.png" id="3_2gha5"]
+[ext_resource type="Texture2D" uid="uid://m5reopykbf0o" path="res://Main/UI/StartMenu/StartMenu_ButtonB.png" id="4_gv6k6"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+offset_top = 0.00402832
+offset_right = 1152.0
+offset_bottom = 647.996
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_pr11w")
+stretch_mode = 4
+
+[node name="Button" type="Button" parent="TextureRect"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+offset_left = 709.0
+offset_top = 303.996
+offset_right = 999.0
+offset_bottom = 349.996
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_colors/font_disabled_color = Color(0.266667, 0.235294, 0.45098, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.662745, 0.266667, 0.137255, 1)
+theme_override_colors/font_hover_color = Color(0.662745, 0.266667, 0.137255, 1)
+theme_override_colors/font_pressed_color = Color(0.662745, 0.266667, 0.137255, 1)
+theme_override_colors/font_focus_color = Color(0.662745, 0.266667, 0.137255, 1)
+theme_override_colors/font_color = Color(0.266667, 0.235294, 0.45098, 1)
+theme_override_fonts/font = ExtResource("2_r8xby")
+theme_override_font_sizes/font_size = 30
+text = "Play"
+icon = ExtResource("3_2gha5")
+icon_alignment = 1
+
+[node name="Button2" type="Button" parent="TextureRect"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+offset_left = 709.0
+offset_top = 363.996
+offset_right = 999.0
+offset_bottom = 409.996
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_colors/font_disabled_color = Color(0.266667, 0.235294, 0.45098, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.662745, 0.266667, 0.137255, 1)
+theme_override_colors/font_hover_color = Color(0.662745, 0.266667, 0.137255, 1)
+theme_override_colors/font_pressed_color = Color(0.662745, 0.266667, 0.137255, 1)
+theme_override_colors/font_focus_color = Color(0.662745, 0.266667, 0.137255, 1)
+theme_override_colors/font_color = Color(0.266667, 0.235294, 0.45098, 1)
+theme_override_fonts/font = ExtResource("2_r8xby")
+theme_override_font_sizes/font_size = 30
+text = "Options"
+icon = ExtResource("4_gv6k6")
+icon_alignment = 1
+
+[node name="Button3" type="Button" parent="TextureRect"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+offset_left = 709.0
+offset_top = 422.996
+offset_right = 999.0
+offset_bottom = 468.996
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_colors/font_disabled_color = Color(0.266667, 0.235294, 0.45098, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.662745, 0.266667, 0.137255, 1)
+theme_override_colors/font_hover_color = Color(0.662745, 0.266667, 0.137255, 1)
+theme_override_colors/font_pressed_color = Color(0.662745, 0.266667, 0.137255, 1)
+theme_override_colors/font_focus_color = Color(0.662745, 0.266667, 0.137255, 1)
+theme_override_colors/font_color = Color(0.266667, 0.235294, 0.45098, 1)
+theme_override_fonts/font = ExtResource("2_r8xby")
+theme_override_font_sizes/font_size = 30
+text = "Exit"
+icon = ExtResource("3_2gha5")
+icon_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 2
+offset_top = 0.00402832
+offset_right = 1152.0
+offset_bottom = 647.996
+mouse_filter = 2
+texture = ExtResource("2_45qqw")
+stretch_mode = 4
