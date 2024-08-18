@@ -34,23 +34,19 @@ func get_random_road_type() -> Road.RoadType:
 
 func _on_texture_button_1_pressed() -> void:
 	current_tile_selection = get_child(0).get_child(0).get_type()
-	print(current_tile_selection)
 	last_pressed_button = 0
 	
 
 func _on_texture_button_2_pressed() -> void:
 	current_tile_selection = get_child(1).get_child(0).get_type()
-	print(current_tile_selection)
 	last_pressed_button = 1
 
 
 func _on_texture_button_3_pressed() -> void:
 	current_tile_selection = get_child(2).get_child(0).get_type()
-	print(current_tile_selection)
 	last_pressed_button = 2
 
 
 func _on_texture_button_4_pressed() -> void:
 	current_tile_selection = get_child(3).get_child(0).get_type()
-	print(current_tile_selection)
 	last_pressed_button = 3

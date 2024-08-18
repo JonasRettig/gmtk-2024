@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_1skcv")
-road_type = 0
+road_type = 1
 north_connected = true
 east_connected = false
 south_connected = true

@@ -27,3 +27,16 @@ func has_connection_to(dir: Direction):
 
 func rotate_dir(dir: Direction):
 	return int(dir + (rotation / 90.0)) % Direction.size()
+
+func _to_string() -> String:
+	match road_type:
+		RoadType.Straight:
+			return "Straight"
+		RoadType.Cross:
+			return "Cross"
+		RoadType.Curve:
+			return "Curve"
+		RoadType.T_Cross:
+			return "T_Cross"
+		_:
+			return "None"
